@@ -11,6 +11,10 @@ module.exports = {
   rules: {
     quotes: ["error", "double"],
     semi: "error",
+    "linebreak-style": [
+      "error",
+      process.platform === "win32" ? "unix" : "windows",
+    ],
     "no-console": "off",
     "comma-dangle": "off",
     "arrow-parens": "off",
