@@ -35,9 +35,6 @@ for (const personaje of personajes) {
     emojiMuerto.classList.remove("d-none");
   });
 
-  const ocultarIconosEstado = (estado, Personaje) => {
-    const emoji = estado.querySelector(".emoticonoMuerto");
-  };
   hablar.addEventListener("click", () => {
     comunicacion.classList.add("on");
     fraseComunicaion.textContent = personaje.comunicar();
