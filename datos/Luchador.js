@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // eslint-disable-next-line import/extensions
 import Personajes from "./Personajes.js";
 // eslint-disable-next-line import/prefer-default-export
