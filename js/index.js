@@ -22,25 +22,24 @@ for (const personaje of personajes) {
   const morir = molde.querySelector(".accion:nth-child(2)");
   const emojiVivo = molde.querySelector(".estado:nth-child(2)");
   const emojiMuerto = molde.querySelector(".estado:first-child");
-  const nombrePersonaje = molde.querySelector(".nombre")
+  const nombrePersonaje = molde.querySelector(".nombre");
 
   const imagenMensaje = document.querySelector(".comunicaciones > img");
 
-  const imagenTarjeta = `img/${nombre.toLowerCase()}.jpg`;
+  const imagenTarjeta =
+    nombre !== "" ? `img/${nombre.toLowerCase()}.jpg` : "img/no-one.jpg";
 
-  if (personaje instanceof Luchador){
-   emoji.textContent = String.fromCodePoint(0x2694)
+  if (personaje instanceof Luchador) {
+    emoji.textContent = String.fromCodePoint(0x2694);
+  } else if (personaje instanceof Rey) {
+    emoji.textContent = String.fromCodePoint(0x1f451);
+  } else if (personaje instanceof Asesor) {
+    emoji.textContent = String.fromCodePoint(0x1f393);
+  } else {
+    emoji.textContent = String.fromCodePoint(0x0001f6e1);
   }
-  else if(personaje instanceof Rey){
-    emoji.textContent = String.fromCodePoint(0x1f451)
-  }
-   else if(personaje instanceof Asesor){
-    emoji.textContent = String.fromCodePoint(0x1f393)
-  }
-   else {emoji.textContent = String.fromCodePoint(0x0001F6E1)}
-  
 
-  nombrePersonaje.textContent = `${nombre} ${personaje.familia}`
+  nombrePersonaje.textContent = `${nombre} ${personaje.familia}`;
 
   const ocultar = (arrayElemento) => {
     for (const elemento of arrayElemento) {
