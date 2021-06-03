@@ -18,6 +18,13 @@ for (const personaje of personajes) {
   const morir = molde.querySelector(".accion:nth-child(2)");
   const emojiVivo = molde.querySelector(".estado:nth-child(2)");
   const emojiMuerto = molde.querySelector(".estado:first-child");
+  const nombrePersonaje = molde.querySelector(".nombre")
+
+  const imagenMensaje = document.querySelector(".comunicaciones > img");
+
+  const imagenTarjeta = `img/${nombre.toLowerCase()}.jpg`;
+
+  nombrePersonaje.textContent = `${nombre} ${personaje.familia}`
 
   emojiMuerto.classList.add("d-none");
   morir.addEventListener("click", () => {
@@ -28,17 +35,15 @@ for (const personaje of personajes) {
     emojiMuerto.classList.remove("d-none");
   });
 
-  const ocultarIconosEstado = (estado, Personaje) => {
-    const emoji = estado.querySelector(".emoticonoMuerto");
-  };
   hablar.addEventListener("click", () => {
     comunicacion.classList.add("on");
     fraseComunicaion.textContent = personaje.comunicar();
+    imagenMensaje.src = imagenTarjeta;
     setTimeout(() => {
       comunicacion.classList.remove("on");
     }, 2000);
   });
-  imagenPersonaje.src = `img/${nombre.toLowerCase()}.jpg`;
+  imagenPersonaje.src = imagenTarjeta;
   molde.classList.remove("personaje-dummy");
   console.log(molde);
   padreDelMolde.append(molde);
