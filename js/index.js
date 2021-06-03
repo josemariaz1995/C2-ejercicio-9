@@ -67,4 +67,25 @@ for (const personaje of personajes) {
   molde.classList.remove("personaje-dummy");
   console.log(molde);
   padreDelMolde.append(molde);
-}
+
+
+}const metadataPorLi = (metadata, rol) => {
+  const elemento = [];
+
+  if (rol === "Luchador") {
+    elemento.push(metadata.querySelector(".arma"));
+    elemento.push(metadata.querySelector(".destreza"));
+  } else if (rol === "Asesor") {
+    elemento.push(metadata.querySelector(".asesora"));
+  } else if (rol === "Escudero") {
+    elemento.push(metadata.querySelector(".peloteo"));
+    elemento.push(metadata.querySelector(".sirve"));
+  } else if (rol === "Rey") {
+    elemento.push(metadata.querySelector(".reinadoTiempo"));
+  }
+
+  borrarMetadata(metadata);
+
+  metadata.append(...elemento);
+
+  return metadata;
