@@ -18,14 +18,18 @@ for (const personaje of personajes) {
   const morir = molde.querySelector(".accion:nth-child(2)");
 
   const Estado = (personaje) => {
-    if (personaje.vivo) {
+    if (personaje) {
       emoji.classList.add("d-none");
     }
     emoji.classList.remove("d-none");
   };
-  const ocultarIconosEstado = (estado, Personaje) => {
-    const emoji = estado.querySelector(".emoticonoMuerto");
-  };
+  morir.addEventListener("click", () => {
+    personaje.morir();
+    imagenPersonaje.classList.add("muerto");
+    morir.classList.add("d-none");
+    Estado(personaje.vivo);
+    console.log(personaje);
+  });
   hablar.addEventListener("click", () => {
     comunicacion.classList.add("on");
     fraseComunicaion.textContent = personaje.comunicar();
