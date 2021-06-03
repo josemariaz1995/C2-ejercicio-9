@@ -12,6 +12,17 @@ for (const personaje of personajes) {
   const molde = moldePersonajes.cloneNode(true);
   const emoji = molde.querySelector(".emoji");
   const imagenPersonaje = molde.querySelector(".card-img-top");
+  const comunicacion = document.querySelector(".comunicaciones");
+  const fraseComunicaion = document.querySelector(".frase");
+  const hablar = molde.querySelector(".accion:first-child");
+  const morir = molde.querySelector(".accion:nth-child(2)");
+  hablar.addEventListener("click", () => {
+    comunicacion.classList.add("on");
+    fraseComunicaion.textContent = personaje.comunicar();
+    setTimeout(() => {
+      comunicacion.classList.remove("on");
+    }, 2000);
+  });
   imagenPersonaje.src = `img/${nombre.toLowerCase()}.jpg`;
   molde.classList.remove("personaje-dummy");
   console.log(molde);
