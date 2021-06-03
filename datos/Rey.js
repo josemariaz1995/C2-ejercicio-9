@@ -2,7 +2,7 @@
 import Personajes from "./Personajes.js";
 
 // eslint-disable-next-line import/prefer-default-export
-export class Rey extends Personajes {
+export default class Rey extends Personajes {
   añosDeReinado;
 
   constructor(nombre, familia, edad, añosDeReinado) {

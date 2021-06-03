@@ -2,7 +2,7 @@
 /* eslint-disable no-useless-constructor */
 /* eslint-disable max-classes-per-file */
 // eslint-disable-next-line import/prefer-default-export
-export class Personajes {
+export default class Personajes {
   nombre;
   familia;
   edad;

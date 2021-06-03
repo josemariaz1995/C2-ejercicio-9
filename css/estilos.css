@@ -65,7 +65,9 @@ img.card-img-top {
   color: #fff;
   width: 80%;
 }
-
+.personaje-dummy {
+  display: none;
+}
 .comunicaciones {
   position: fixed;
   top: 0;
