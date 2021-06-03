@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable max-classes-per-file */
 // eslint-disable-next-line import/prefer-default-export
