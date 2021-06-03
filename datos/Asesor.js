@@ -4,7 +4,7 @@ import Luchador from "./Luchador.js";
 import Rey from "./Rey.js";
 import Escudero from "./Ecudero.js";
 
-class Asesor extends Personajes {
+export default class Asesor extends Personajes {
   arma;
 
   asesoriamiento;

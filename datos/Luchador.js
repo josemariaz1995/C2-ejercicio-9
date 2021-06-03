@@ -2,7 +2,7 @@
 // eslint-disable-next-line import/extensions
 import Personajes from "./Personajes.js";
 // eslint-disable-next-line import/prefer-default-export
-export class Luchador extends Personajes {
+export default class Luchador extends Personajes {
   destreza;
   arma;
   constructor(nombre, familia, edad, arma, valorDestreza) {

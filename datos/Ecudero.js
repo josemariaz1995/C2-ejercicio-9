@@ -4,7 +4,7 @@ import Personajes from "./Personajes.js";
 import Luchador from "./Luchador.js";
 
 // eslint-disable-next-line import/prefer-default-export
-export class Escudero extends Personajes {
+export default class Escudero extends Personajes {
   nivelpelotismo;
   nivelpelotismo = Math.floor(Math.random() * 11);
 
