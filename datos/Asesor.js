@@ -7,13 +7,13 @@ import Escudero from "./Ecudero.js";
 export default class Asesor extends Personajes {
   arma;
 
-  asesoriamiento;
+  asesoramiento;
 
   constructor(nombre, familia, edad, arma, personajeSirve) {
     super(nombre, familia, edad);
     this.arma = arma;
     if (personajeSirve instanceof Personajes) {
-      this.personajeAlQueSirve = personajeSirve;
+      this.asesoramiento = personajeSirve;
     }
   }
 
