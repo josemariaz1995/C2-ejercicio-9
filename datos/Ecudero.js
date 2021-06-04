@@ -6,8 +6,7 @@ import Luchador from "./Luchador.js";
 // eslint-disable-next-line import/prefer-default-export
 export default class Escudero extends Personajes {
   nivelpelotismo;
-  nivelpelotismo = Math.floor(Math.random() * 11);
-
+  personajeAlQueSirve;
   constructor(nombre, familia, edad, personajeSirve, valorPelotismo) {
     super(nombre, familia, edad);
     if (personajeSirve instanceof Luchador) {

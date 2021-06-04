@@ -9,6 +9,7 @@ import personajes from "./personajes.js";
 
 const creacion = () => {
   const padreDelMolde = document.querySelector(".personajes");
+
   for (const personaje of personajes) {
     console.log(personaje);
     const nombre = personaje.nombre;
@@ -27,7 +28,8 @@ const creacion = () => {
     const imagenMensaje = document.querySelector(".comunicaciones > img");
     const clonarLi = document.querySelector(".dato-personaje");
     const metadata = molde.querySelector(".personaje-overlay .metadata");
-
+    imagenMensaje.alt = `${nombre} ${personaje.familia}`;
+    imagenPersonaje.alt = `${nombre} ${personaje.familia}`;
     const imagenTarjeta =
       nombre !== "" ? `img/${nombre.toLowerCase()}.jpg` : "img/no-one.jpg";
 
@@ -37,9 +39,9 @@ const creacion = () => {
       const destreza = personaje.destreza;
       arrayDato.push(destreza, arma);
       console.log(arrayDato);
+
       for (const dato of arrayDato) {
         const datosPersonaje = clonarLi.cloneNode();
-
         datosPersonaje.textContent =
           dato >= 0 ? `destreza: ${dato}` : `arma: ${dato}`;
         metadata.append(datosPersonaje);
@@ -58,21 +60,25 @@ const creacion = () => {
       emoji.textContent = String.fromCodePoint(0x1f451);
     } else if (personaje instanceof Asesor) {
       const arrayDato = [];
-      const anyoReinado = personaje.añosDeReinado;
-
+      const asesorado = personaje.asesoramiento.nombre;
+      arrayDato.push(asesorado);
       for (const dato of arrayDato) {
         const datosPersonaje = clonarLi.cloneNode();
-        datosPersonaje.textContent = dato;
+
+        datosPersonaje.textContent = `Asesorado: ${dato}`;
         metadata.append(datosPersonaje);
       }
       emoji.textContent = String.fromCodePoint(0x1f393);
     } else {
       const arrayDato = [];
-      const anyoReinado = personaje.añosDeReinado;
-
+      const pelotismo = personaje.nivelpelotismo;
+      const sirve = personaje.personajeAlQueSirve.nombre;
+      arrayDato.push(pelotismo, sirve);
       for (const dato of arrayDato) {
         const datosPersonaje = clonarLi.cloneNode();
-        datosPersonaje.textContent = dato;
+
+        datosPersonaje.textContent =
+          dato >= 0 ? `pelotismo: ${dato}` : `Sirve a: ${dato}`;
         metadata.append(datosPersonaje);
       }
       emoji.textContent = String.fromCodePoint(0x0001f6e1);
@@ -105,14 +111,8 @@ const creacion = () => {
     imagenPersonaje.src = imagenTarjeta;
     molde.classList.remove("personaje-dummy");
     console.log(molde);
+
     padreDelMolde.append(molde);
   }
 };
 creacion();
-
-/* const metadataPorLi = (metadata, rol) => {
-  const elemento = [];
-
-  borrarMetadata(metadata);
-
-  metadata.append(...elemento); */
