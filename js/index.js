@@ -39,7 +39,9 @@ const creacion = () => {
       console.log(arrayDato);
       for (const dato of arrayDato) {
         const datosPersonaje = clonarLi.cloneNode();
-        datosPersonaje.textContent = `Reinado: ${dato}`;
+
+        datosPersonaje.textContent =
+          dato >= 0 ? `destreza: ${dato}` : `arma: ${dato}`;
         metadata.append(datosPersonaje);
       }
       emoji.textContent = String.fromCodePoint(0x2694);
@@ -49,6 +51,7 @@ const creacion = () => {
       console.log(arrayDato);
       for (const dato of arrayDato) {
         const datosPersonaje = clonarLi.cloneNode();
+
         datosPersonaje.textContent = `Reinado: ${dato}`;
         metadata.append(datosPersonaje);
       }
