@@ -28,6 +28,8 @@ const creacion = () => {
     const imagenMensaje = document.querySelector(".comunicaciones > img");
     const clonarLi = document.querySelector(".dato-personaje");
     const metadata = molde.querySelector(".personaje-overlay .metadata");
+    const edad = molde.querySelector(".metadata > li");
+    edad.textContent = `Edad: ${personaje.edad}`;
     imagenMensaje.alt = `${nombre} ${personaje.familia}`;
     imagenPersonaje.alt = `${nombre} ${personaje.familia}`;
     const imagenTarjeta =
