@@ -9,7 +9,7 @@ import personajes from "./personajes.js";
 
 const creacion = () => {
   const padreDelMolde = document.querySelector(".personajes");
-
+  let i = 1;
   for (const personaje of personajes) {
     console.log(personaje);
     const nombre = personaje.nombre;
@@ -113,8 +113,9 @@ const creacion = () => {
     imagenPersonaje.src = imagenTarjeta;
     molde.classList.remove("personaje-dummy");
     console.log(molde);
-
-    padreDelMolde.append(molde);
+    setTimeout(() => {
+      padreDelMolde.append(molde);
+    }, 1000 * i++);
   }
 };
 creacion();
